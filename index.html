@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="genderButtons">
+        <p>Choose gender</p>
+        <button name="1" class="genderButton male" onmouseover="addHover(male)" onmouseout="removeHover(male)" onclick="genderSelected(male)">Male</button>
+        <button name="2" class="genderButton female" onmouseover="addHover(female)" onmouseout="removeHover(female)" onclick="genderSelected(female)">Female</button>
+        <button onclick="location.reload()" style="width:5%">Reset</button>
+        
+    </div>
+    <div id="male" class="character-pics">
+        <option value="1" onclick="selectedRace(this)" style="background-image: url(img/human_m.png)"> Human</option>
+        <option value="2" onclick="selectedRace(this)" style="background-image: url(img/elf_m.png)"> Elf</option>
+        <option value="3" onclick="selectedRace(this)" style="background-image: url(img/dwarf.png)"> Dwarf</option>
+        <option value="4" onclick="selectedRace(this)" style="background-image: url(img/giant_m.png)"> Giant</option>
+        <option value="5" onclick="selectedRace(this)" style="background-image: url(img/magical_m.jpg)"> Magical creature</option>
+        <option value="6" onclick="selectedRace(this)" style="background-image: url(img/dark_m.png)"> Dark elf</option>
+    </div>
+    <div id="female" class="character-pics">
+        <option value="1" onclick="selectedRace(this)" style="background-image: url(img/human_f.png)"> Human</option>
+        <option value="2" onclick="selectedRace(this)" style="background-image: url(img/elf_f.png)"> Elf</option>
+        <option value="3" onclick="selectedRace(this)" style="background-image: url(img/dwarf.png)"> Dwarf</option>
+        <option value="4" onclick="selectedRace(this)" style="background-image: url(img/giant_f.png)"> Giant</option>
+        <option value="5" onclick="selectedRace(this)" style="background-image: url(img/magical_f.png)"> Magical creature</option>
+        <option value="6" onclick="selectedRace(this)" style="background-image: url(img/dark_f.png)"> Dark elf</option>
+    </div>
+    <div id="character-class">
+        <option value="1" onclick="selectedClass(this)" style="background-image: url(img/fighter.svg)"></option>
+        <option value="2" onclick="selectedClass(this)" style="background-image: url(img/wizard.svg)"> </option>
+        <option value="3" onclick="selectedClass(this)" style="background-image: url(img/rogue.svg)"> </option>
+        <option value="4" onclick="selectedClass(this)" style="background-image: url(img/paladin.svg)"> </option>
+        <option value="5" onclick="selectedClass(this)" style="background-image: url(img/druid.svg)">  </option>
+    </div>
+    <div id="input-container">
+        <input type="text" name="character_name" id="character_name" placeholder="Character name">
+        <select name="gender" id="gender" disabled>
+            <option value=""selected="selected"  ></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <select name="race" id="race" disabled>
+            <option value="" selected="selected" ></option>
+            <option value="human">Human</option>
+            <option value="elf">Elf</option>
+            <option value="dwarf">Dwarf</option>
+            <option value="giant">Giant</option>
+            <option value="magical_creature">Magical creature</option>
+            <option value="dark_elf">Dark elf</option>
+        </select>
+        <select name="classes" id="classes" disabled>
+            <option value="" selected="selected" ></option>
+            <option value="fighter">Fighter</option>
+            <option value="wizard">Wizard</option>
+            <option value="rogue">Rogue</option>
+            <option value="paladin">Paladin</option>
+            <option value="druid">Druid</option>
+        </select>
+    </div>    
+    <script src="main.js"></script>
+</body>
+</html>

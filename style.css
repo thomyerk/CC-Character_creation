@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Texturina:wght@700&display=swap");
+body {
+  font-family: "Texturina", serif;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FFFBF0;
+  flex-direction: column;
+}
+
+#genderButtons {
+  align-content: center;
+  min-height: 150px;
+  min-width: 150px;
+}
+#genderButtons button {
+  height: 70px;
+  width: 30%;
+  border: none;
+  font-size: large;
+  font-family: "Texturina", serif;
+  background-color: #ffcdab;
+}
+#genderButtons button:hover {
+  background-color: #ffa45c;
+  color: white;
+  box-shadow: inset -7px 9px 11px -11px black;
+}
+#genderButtons p {
+  font-size: x-large;
+}
+
+.character-pics {
+  display: flex;
+  width: 60vw;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  transition-duration: 1s;
+  gap: 20px;
+  margin: 30px;
+}
+.character-pics option {
+  background-color: #FFFBF0;
+  padding-top: 10px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: bottom;
+  min-height: 200px;
+  width: 70%;
+  background-size: contain;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  text-transform: uppercase;
+}
+.character-pics option:hover {
+  transform: scale(1.3, 1.2);
+  box-shadow: 0px 6px 1px 0px #ffa45c;
+}
+
+.hovered, .selected {
+  transform: translate(-10px, -10px);
+  -webkit-box-shadow: 15px 17px 45px -10px #b8b8b8;
+  -moz-box-shadow: 15px 17px 45px -10px #b8b8b8;
+  box-shadow: 15px 17px 45px -10px #b8b8b8;
+}
+
+.race-selected {
+  transform: scale(1.3, 1.2);
+  box-shadow: 0 6px 1px 0px #ffa45c;
+}
+
+.removed {
+  visibility: hidden;
+}
+
+#character-class {
+  opacity: 0;
+  display: flex;
+  width: 40vw;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  transition-duration: 3s;
+  gap: 20px;
+  margin: 50px;
+  justify-content: center;
+}
+#character-class option {
+  display: flex;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  width: 100%;
+}
+#character-class option:hover {
+  filter: invert(0.7);
+}
+
+.class-selected {
+  filter: invert(0.7);
+}
+
+#input-container {
+  position: fixed;
+  right: -20px;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+#input-container input, #input-container select {
+  font-family: "Texturina", serif;
+  font-size: xx-large;
+  height: 70px;
+  background-color: #ffa45c;
+}
+#input-container ::placeholder {
+  color: #ffcdab;
+}
+
+/*# sourceMappingURL=style.css.map */
