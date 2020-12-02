@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Texturina:wght@700&display=swap");
+* {
+  border-radius: 5px;
+}
+
 body {
   font-family: "Texturina", serif;
   display: flex;
   flex-wrap: wrap;
-  background-color: #FFFBF0;
+  background-color: #5d5d5a;
   flex-direction: column;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #a1eafb 0%, #cabbe9 100%);
 }
 
 #genderButtons {
@@ -18,12 +24,19 @@ body {
   border: none;
   font-size: large;
   font-family: "Texturina", serif;
-  background-color: #ffcdab;
 }
 #genderButtons button:hover {
-  background-color: #ffa45c;
-  color: white;
-  box-shadow: inset -7px 9px 11px -11px black;
+  transition-duration: 0.5s;
+  transform: translate(-4px, -10px);
+  -webkit-box-shadow: 15px 17px 45px -10px #9e579d;
+  -moz-box-shadow: 15px 17px 45px -10px #9e579d;
+  box-shadow: 15px 17px 45px -10px #9e579d;
+}
+#genderButtons button.female {
+  background-color: #fde0fb;
+}
+#genderButtons button.male {
+  background-color: #dbeffb;
 }
 #genderButtons p {
   font-size: x-large;
@@ -56,23 +69,30 @@ body {
 }
 .character-pics option:hover {
   transform: scale(1.3, 1.2);
-  box-shadow: 0px 6px 1px 0px #ffa45c;
+  box-shadow: 0px 6px 1px 0px #ffcef3;
 }
 
-.hovered, .selected {
+.hovered {
+  transition-duration: 1s;
   transform: translate(-10px, -10px);
-  -webkit-box-shadow: 15px 17px 45px -10px #b8b8b8;
-  -moz-box-shadow: 15px 17px 45px -10px #b8b8b8;
-  box-shadow: 15px 17px 45px -10px #b8b8b8;
+  -webkit-box-shadow: 15px 17px 45px -10px #9e579d;
+  -moz-box-shadow: 15px 17px 45px -10px #9e579d;
+  box-shadow: 15px 17px 45px -10px #9e579d;
+}
+
+.selected {
+  transform: translateY(-120%);
 }
 
 .race-selected {
   transform: scale(1.3, 1.2);
-  box-shadow: 0 6px 1px 0px #ffa45c;
+  box-shadow: 0 6px 1px 0px #ffcef3;
 }
 
 .removed {
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
 #character-class {
@@ -93,11 +113,11 @@ body {
   width: 100%;
 }
 #character-class option:hover {
-  filter: invert(0.7);
+  filter: invert(1);
 }
 
 .class-selected {
-  filter: invert(0.7);
+  filter: invert(1);
 }
 
 #input-container {
@@ -111,10 +131,9 @@ body {
   font-family: "Texturina", serif;
   font-size: xx-large;
   height: 70px;
-  background-color: #ffa45c;
 }
 #input-container ::placeholder {
-  color: #ffcdab;
+  color: #ffcef3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,8 +9,8 @@
 <body>
     <div id="genderButtons">
         <p>Choose gender</p>
-        <button name="1" class="genderButton male" onmouseover="addHover(male)" onmouseout="removeHover(male)" onclick="genderSelected(male)">Male</button>
-        <button name="2" class="genderButton female" onmouseover="addHover(female)" onmouseout="removeHover(female)" onclick="genderSelected(female)">Female</button>
+        <button name="male" class="genderButton male" onmouseover="addHover(male)" onmouseout="removeHover(male)" onclick="genderSelected(female, male)">Male</button>
+        <button name="female" class="genderButton female" onmouseover="addHover(female)" onmouseout="removeHover(female)" onclick="genderSelected(male, female)">Female</button>
         <button onclick="location.reload()" style="width:5%">Reset</button>
         
     </div>

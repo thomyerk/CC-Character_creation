@@ -1,35 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Texturina:wght@700&display=swap')
 $imgBg: #FFFBF0
 $dark: #5d5d5a
-$middle: #ffa45c
-$soft: #ffcdab
+$middle: #ffcef3
+$soft: #ffcef3
 $font: 'Texturina', serif
+$female: #fde0fb
+$male: #dbeffb
+$bgcolor:  #FFDEE9
+$bgimage:  linear-gradient(0deg, #a1eafb 0%, #cabbe9 100%)
+$shadow: #9e579d
 
+
+*
+    border-radius: 5px 
 
 body
     font-family: $font
     display: flex
     flex-wrap: wrap
-    background-color: $imgBg
+    background-color: $dark
     flex-direction: column
+    background-color: $bgcolor
+    background-image: $bgimage
+
 
 #genderButtons
     align-content: center
     min-height: 150px
     min-width: 150px
+    
     button
         height: 70px
         width: 30%
         border: none
         font-size: large
         font-family: $font
-        background-color: $soft
         &:hover
-            background-color: $middle
-            color: white
-            box-shadow: inset -7px 9px 11px -11px rgba(0,0,0,1)
+                transition-duration: 0.5s
+                transform: translate(-4px, -10px)
+                -webkit-box-shadow: 15px 17px 45px -10px $shadow
+                -moz-box-shadow: 15px 17px 45px -10px $shadow
+                box-shadow: 15px 17px 45px -10px $shadow
+        &.female
+            background-color: $female
+        &.male
+            background-color: $male
+
     p
         font-size: x-large
+    
 
 .character-pics
     display: flex
@@ -57,11 +76,15 @@ body
         &:hover
             transform: scale(1.3,1.2)
             box-shadow: 0px 6px 1px 0px $middle
-.hovered, .selected
+
+.hovered
+    transition-duration: 1s
     transform: translate(-10px, -10px)
-    -webkit-box-shadow: 15px 17px 45px -10px rgba(184,184,184,1)
-    -moz-box-shadow: 15px 17px 45px -10px rgba(184,184,184,1)
-    box-shadow: 15px 17px 45px -10px rgba(184,184,184,1)
+    -webkit-box-shadow: 15px 17px 45px -10px $shadow
+    -moz-box-shadow: 15px 17px 45px -10px $shadow
+    box-shadow: 15px 17px 45px -10px $shadow
+.selected
+    transform: translateY(-120%)
 
 .race-selected
             transform: scale(1.3,1.2)
@@ -69,6 +92,8 @@ body
 
 .removed
     visibility: hidden
+    opacity: 0
+    transition: visibility 0s 1s, opacity 1s linear
 
 #character-class
     opacity: 0
@@ -86,9 +111,9 @@ body
         min-height: 200px
         width: 100%
         &:hover
-            filter: invert(0.7)
+            filter: invert(1)
 .class-selected
-        filter: invert(0.7)
+        filter: invert(1)
 
 #input-container
     position: fixed
@@ -100,6 +125,5 @@ body
         font-family: $font
         font-size: xx-large
         height: 70px
-        background-color: $middle
     ::placeholder
         color: $soft

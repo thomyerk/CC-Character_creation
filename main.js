@@ -1,22 +1,33 @@
 function addHover(gender){
-    gender.classList.add("hovered")
+    var childElems = gender.children
+    Array.from(childElems).forEach(function(item) {
+        item.classList.add("hovered")
+    })
 }
 
 function removeHover(gender){
-    gender.classList.remove("hovered")
+    var childElems = gender.children
+    Array.from(childElems).forEach(function(item) {
+        item.classList.remove("hovered")
+    })
 }
 
 var selectedGender = null
 
-function genderSelected(gender){ 
+function genderSelected(toHide,toShow,background){ 
+    console.log(gender);
     var selectOptions = document.getElementById("gender")
-    if(gender.id != selectOptions.value && selectedGender != null){
-        //selectedGender.classList.add("removed")
+    var selectedColor = document.querySelector("select#gender")
+    var classes = document.getElementById("character-class")
+    toHide.classList.add("removed")
+    if(toShow.id != selectOptions.value && selectedGender != null){
         selectOptions.value = null
     }
-    selectOptions.value = gender.id
-    selectedGender = gender
+    selectedColor.style.background = background
+    selectOptions.value = toShow.id
+    selectedGender = toShow
     selectedGender.classList.add("selected")
+    classes.classList.add("selected")
 }
 
 var raceSelected = null;
