@@ -1,4 +1,5 @@
 function addHover(gender){
+    console.log(gender);
     var childElems = gender.children
     Array.from(childElems).forEach(function(item) {
         item.classList.add("hovered")
@@ -12,22 +13,20 @@ function removeHover(gender){
     })
 }
 
-var selectedGender = null
-
 function genderSelected(toHide,toShow,background){ 
-    console.log(gender);
     var selectOptions = document.getElementById("gender")
     var selectedColor = document.querySelector("select#gender")
-    var classes = document.getElementById("character-class")
     toHide.classList.add("removed")
-    if(toShow.id != selectOptions.value && selectedGender != null){
+    if(toShow.id != selectOptions.values){
         selectOptions.value = null
     }
     selectedColor.style.background = background
     selectOptions.value = toShow.id
-    selectedGender = toShow
-    selectedGender.classList.add("selected")
-    classes.classList.add("selected")
+    console.log(toShow);
+    (toShow.id == "female") ? toShow.classList.add("female-selected"):null
+    Array.from(toShow.children).forEach(function(item) {
+        item.classList.add("gender-selected")
+    })
 }
 
 var raceSelected = null;
